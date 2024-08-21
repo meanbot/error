@@ -1,6 +1,2 @@
-bin/
-lib/
-temp/
+build/
 .vs/
-*.user
-*.log

@@ -1,0 +1,34 @@
+
+cmake_minimum_required(VERSION 3.5.0)
+
+
+project(error 
+  HOMEPAGE_URL https://github.com/meanbot/error
+  DESCRIPTION "error - error codes & categories" 
+  VERSION 0.0.1 
+  LANGUAGES CXX)
+
+include(cmake/CPM.cmake)
+
+CPMAddPackage(
+  NAME xxhashct 
+  GITHUB_REPOSITORY ekpyron/xxhashct 
+  GIT_TAG "master" 
+  DOWNLOAD_ONLY YES
+)
+
+add_library(${PROJECT_NAME} STATIC 
+  src/category.cpp 
+  src/precomp.cpp 
+)
+
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(${PROJECT_NAME} PRIVATE "${xxhashct_SOURCE_DIR}")
+
+target_precompile_headers(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/precomp.hpp)
+
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)

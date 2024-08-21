@@ -9,6 +9,10 @@
 error - error codes & categories
 
 # contribs (lib)
+- https://github.com/ekpyron/xxhashct
 
 # contribs (tools)
-- ASCII text generated with https://www.asciiart.eu/text-to-ascii-art
+- https://github.com/catchorg/Catch2
+- https://github.com/google/benchmark
+- https://github.com/fmtlib/fmt
+- https://www.asciiart.eu/text-to-ascii-art (for ASCII text)
