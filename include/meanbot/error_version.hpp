@@ -13,11 +13,12 @@
 #include <string>
 
 
-namespace meanbot::error
+//error project does not have a custom namespace (e.g. error) !
+namespace meanbot
 {
 
 // https://semver.org
-struct version final
+struct error_version final
 {
 	static constexpr std::string_view   NAME          = "meanbot.error";
 	static constexpr std::string_view   DESCRIPTION   = "error codes & categories";
@@ -31,6 +32,6 @@ struct version final
 
 	// <MAJOR>.<MINOR>.<PATCH>[-<PRERELEASE>][+BUILDMETADATA]
 	static constexpr std::string_view   STRING        = "0.0.1";
-}; //struct version
+};//struct error_version
 
-} //namespace meanbot::error
+}//namespace meanbot::error

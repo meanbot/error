@@ -9,18 +9,19 @@
 #pragma once
 
 
-#include "meanbot/error/type.hpp"
+#include "meanbot/error_types.hpp"
 #include <cstdint>
 
 
-namespace meanbot::error
+//error project does not have a custom namespace (e.g. error) !
+namespace meanbot
 {
 
-static inline constexpr category_type   CATEGORY_ID = 0;
+static inline constexpr error_category_type   ERROR_CATEGORY_ID = 0;
 
-enum class code : code_type
+enum class error : error_type
 {
-	none = begin_error_codes(CATEGORY_ID),
+	none = begin_error_codes(ERROR_CATEGORY_ID),
 	invalid_arg, 
 	invalid_call, 
 	not_initialized, 
@@ -54,6 +55,6 @@ enum class code : code_type
 	generic, 
 	internal, 
 	division_by_zero, 
-};
+};//enum class error : code_type
 
-}//namespace meanbot::error
+}//namespace meanbot

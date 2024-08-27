@@ -6,16 +6,18 @@
 // SPDX-FileCopyrightText: 2024 meanbot <https://github.com/meanbot>
 // SPDX-License-Identifier: MIT
 
-#pragma once
+#include <fmt/core.h>
+#include <catch2/catch_all.hpp>
 
 
-#include <cstdint>
-#include <string>
-
-
-namespace meanbot::error
+CATCH_TEST_CASE("test", "")
 {
+	CATCH_REQUIRE(1 == 1);
+}
 
-constexpr uint32_t generate_category_id(const char *categ_name);
+int main(int argc, char *argv[])
+{
+	int   result = Catch::Session().run(argc, argv);
 
-} //namespace meanbot::error
+	return result;
+}
